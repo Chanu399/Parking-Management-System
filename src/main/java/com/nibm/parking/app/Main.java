@@ -16,7 +16,6 @@ import com.nibm.parking.service.VehicleManager;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
         ParkingManager parkingManager = new ParkingManager();
         CustomerManager customerManager = new CustomerManager();
         PaymentManager paymentManager = new PaymentManager();
@@ -33,6 +32,23 @@ public class Main {
         } else {
             parkingManager.createParkingSlots();
         }
+
+        // Try the graphical interface first. If it can't start for any reason
+        // (no display available, Swing init failure, etc.), fall back to the
+        // console menu so the system is never left unusable.
+        try {
+            SwingApp.launch(vehicleManager, customerManager, parkingManager, paymentManager);
+        } catch (Exception e) {
+            System.out.println("Could not start the graphical interface (" + e.getMessage() + "). Falling back to console mode.");
+            runConsole(vehicleManager, customerManager, parkingManager, paymentManager);
+        }
+    }
+
+    private static void runConsole(VehicleManager vehicleManager,
+                                    CustomerManager customerManager,
+                                    ParkingManager parkingManager,
+                                    PaymentManager paymentManager) {
+        Scanner sc = new Scanner(System.in);
 
         int choice;
         do {
