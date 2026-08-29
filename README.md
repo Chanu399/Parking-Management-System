@@ -164,22 +164,15 @@ The core workflow of the application is shown below:
 
 ### Typical Use Case Flow
 
-```text
-Customer Registration
-        ↓
-Vehicle Registration
-        ↓
-Parking Slot Allocation
-        ↓
-Vehicle Entry Recorded
-        ↓
-Vehicle Exit Recorded
-        ↓
-Fee Calculation
-        ↓
-Payment Processing
-        ↓
-Revenue Update and Save
+```mermaid
+flowchart TD
+    A[Customer Registration] --> B[Vehicle Registration]
+    B --> C[Parking Slot Allocation]
+    C --> D[Vehicle Entry Recorded]
+    D --> E[Vehicle Exit Recorded]
+    E --> F[Fee Calculation]
+    F --> G[Payment Processing]
+    G --> H[Revenue Update and Save]
 ```
 
 ---
@@ -223,6 +216,32 @@ Handles JSON serialization and deserialization so the system can save and reload
 Represents payment-related error handling.
 
 This architecture keeps the code modular and easier to maintain, test, and extend.
+
+### Architecture Diagram
+
+```mermaid
+flowchart LR
+    A[User / Admin] --> B[Main.java]
+    B --> C[SwingApp.java]
+    B --> D[Console Menu]
+
+    C --> E[CustomerManager]
+    C --> F[VehicleManager]
+    C --> G[ParkingManager]
+    C --> H[PaymentManager]
+
+    E --> I[Customer]
+    F --> J[Vehicle]
+    G --> K[ParkingSlot]
+    G --> L[ParkingRecord]
+    H --> M[Payment]
+
+    E --> N[DataStore]
+    F --> N
+    G --> N
+    H --> N
+    N --> O[(parking_data.json)]
+```
 
 ---
 
@@ -290,6 +309,55 @@ paymentMethod
 ```
 
 This conceptual ERD reflects the actual relationship logic used in the code and supports the system’s business rules.
+
+### ERD Diagram
+
+```mermaid
+erDiagram
+    CUSTOMER ||--o{ VEHICLE : owns
+    CUSTOMER ||--o{ PARKING_RECORD : creates
+    PARKING_SLOT ||--o| PARKING_RECORD : is_used_by
+    PARKING_RECORD ||--o| PAYMENT : generates
+
+    CUSTOMER {
+        int customerId PK
+        string nic
+        string name
+        string phoneNumber
+        date registrationDate
+    }
+
+    VEHICLE {
+        string numberPlate PK
+        string vehicleType
+        string nic FK
+    }
+
+    PARKING_SLOT {
+        int slotNo PK
+        string slotType
+        string status
+        string numberPlate
+    }
+
+    PARKING_RECORD {
+        int recordId PK
+        string numberPlate FK
+        int slotNo FK
+        datetime entryTime
+        datetime exitTime
+        double parkingFee
+    }
+
+    PAYMENT {
+        int paymentId PK
+        int recordId FK
+        double amount
+        string paymentDate
+        string paymentStatus
+        string paymentMethod
+    }
+```
 
 ---
 
