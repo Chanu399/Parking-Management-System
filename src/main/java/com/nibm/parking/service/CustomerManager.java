@@ -27,13 +27,11 @@ public class CustomerManager {
     }
 
     // Update
-    public void updateCustomer(int customerId, String newName,
-                                String newPhoneNumber, String newNumberPlate) {
+    public void updateCustomer(int customerId, String newName, String newPhoneNumber) {
         for (Customer customer : customers) {
             if (customer.getCustomerId() == customerId) {
                 customer.setName(newName);
                 customer.setPhoneNumber(newPhoneNumber);
-                customer.setNumberPlate(newNumberPlate);
 
                 System.out.println("Customer updated successfully");
                 return;
@@ -56,19 +54,8 @@ public class CustomerManager {
         }
     }
 
-    // Links a number plate (e.g. one being parked) back to a registered customer
-    public Customer findCustomerByNumberPlate(String numberPlate) {
-        for (Customer customer : customers) {
-            if (customer.getNumberPlate().equals(numberPlate)) {
-                return customer;
-            }
-        }
-        return null;
-    }
-
-    // Links a NIC entered at parking time back to a registered customer.
-    // Returns null if no matching customer exists — caller should just
-    // park without a customer link in that case.
+    // Links a NIC entered at parking/vehicle-registration time back to a
+    // registered customer. Returns null if no matching customer exists.
     public Customer findCustomerByNIC(String nic) {
         for (Customer customer : customers) {
             if (customer.getNIC().equals(nic)) {

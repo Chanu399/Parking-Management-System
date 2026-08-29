@@ -70,7 +70,7 @@ public class DataStore {
             m.put("name", c.getName());
             m.put("phoneNumber", c.getPhoneNumber());
             m.put("registrationDate", c.getRegistrationDate().toString());
-            m.put("numberPlate", c.getNumberPlate());
+            m.put("numberPlates", c.getNumberPlates());
             list.add(m);
         }
         return list;
@@ -162,13 +162,22 @@ public class DataStore {
         ArrayList<Customer> customers = new ArrayList<>();
         for (Object o : (List<Object>) root.getOrDefault("customers", new ArrayList<>())) {
             Map<String, Object> m = (Map<String, Object>) o;
+
+            ArrayList<String> numberPlates = new ArrayList<>();
+            Object platesObj = m.get("numberPlates");
+            if (platesObj instanceof List) {
+                for (Object p : (List<Object>) platesObj) {
+                    numberPlates.add((String) p);
+                }
+            }
+
             customers.add(new Customer(
                     toInt(m.get("customerId")),
                     (String) m.get("nic"),
                     (String) m.get("name"),
                     (String) m.get("phoneNumber"),
                     LocalDate.parse((String) m.get("registrationDate")),
-                    (String) m.get("numberPlate")
+                    numberPlates
             ));
         }
         customerManager.loadCustomers(customers);

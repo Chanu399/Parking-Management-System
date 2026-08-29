@@ -105,9 +105,7 @@ public class Main {
                     String name = sc.nextLine();
                     System.out.print("Enter Phone Number: ");
                     String phone = sc.nextLine();
-                    System.out.print("Enter Vehicle Number Plate: ");
-                    String custPlate = sc.nextLine();
-                    Customer customer = new Customer(custId, nic, name, phone, LocalDate.now(), custPlate);
+                    Customer customer = new Customer(custId, nic, name, phone, LocalDate.now());
                     customerManager.addCustomer(customer);
                     break;
 
@@ -122,9 +120,7 @@ public class Main {
                     String newName = sc.nextLine();
                     System.out.print("Enter new Phone Number: ");
                     String newPhone = sc.nextLine();
-                    System.out.print("Enter new Number Plate: ");
-                    String newPlate = sc.nextLine();
-                    customerManager.updateCustomer(updateId, newName, newPhone, newPlate);
+                    customerManager.updateCustomer(updateId, newName, newPhone);
                     break;
 
                 case 8:
@@ -165,7 +161,15 @@ public class Main {
                     String vehType = sc.nextLine();
                     System.out.print("Enter Owner NIC: ");
                     String vehNic = sc.nextLine();
+                    // The owner NIC must belong to a registered customer, or
+                    // the vehicle registration is refused entirely.
+                    Customer ownerCustomer = customerManager.findCustomerByNIC(vehNic);
+                    if (ownerCustomer == null) {
+                        System.out.println("NIC not registered. Vehicle cannot be registered.");
+                        break;
+                    }
                     vehicleManager.addVehicle(new Vehicle(vehPlate, vehType, vehNic));
+                    ownerCustomer.addNumberPlate(vehPlate);
                     break;
 
                 case 13:

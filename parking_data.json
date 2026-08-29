@@ -1,13 +1,26 @@
 {
-  "vehicles": [],
+  "vehicles": [
+    {
+      "numberPlate": "1212",
+      "vehicleType": "Van",
+      "nic": "1111"
+    },
+    {
+      "numberPlate": "3434",
+      "vehicleType": "Van",
+      "nic": "3333"
+    }
+  ],
   "customers": [
     {
       "customerId": 1111,
       "nic": "1111",
-      "name": "joe",
+      "name": "jpe",
       "phoneNumber": "1111",
       "registrationDate": "2026-08-29",
-      "numberPlate": "1111"
+      "numberPlates": [
+        "1212"
+      ]
     }
   ],
   "parkingSlots": [
@@ -254,17 +267,17 @@
     {
       "slotNo": 31,
       "slotType": "Car/Van",
-      "status": "Occupied",
-      "numberPlate": "1111",
-      "vehicleType": "Van",
-      "nic": "1111"
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
     },
     {
       "slotNo": 32,
       "slotType": "Car/Van",
-      "status": "Occupied",
-      "numberPlate": "2222",
-      "vehicleType": "Car",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
       "nic": null
     },
     {
@@ -532,23 +545,6 @@
       "nic": null
     }
   ],
-  "parkingRecords": [
-    {
-      "recordId": 1,
-      "numberPlate": "1111",
-      "slotNo": 31,
-      "entryTime": "2026-08-29T18:24:46.875564800",
-      "exitTime": null,
-      "parkingFee": 0.0
-    },
-    {
-      "recordId": 2,
-      "numberPlate": "2222",
-      "slotNo": 32,
-      "entryTime": "2026-08-29T18:25:23.408642500",
-      "exitTime": null,
-      "parkingFee": 0.0
-    }
-  ],
+  "parkingRecords": [],
   "payments": []
 }

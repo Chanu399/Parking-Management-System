@@ -1,6 +1,7 @@
 package com.nibm.parking.model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Customer {
 
@@ -9,21 +10,39 @@ public class Customer {
     private String name;
     private String phoneNumber;
     private LocalDate registrationDate;
-    private String numberPlate;
+    private ArrayList<String> numberPlates;
 
+    // Normal constructor — used when creating a brand-new customer with no
+    // vehicles registered under them yet.
     public Customer(int customerId,
                      String nic,
                      String name,
                      String phoneNumber,
-                     LocalDate registrationDate,
-                     String numberPlate) {
+                     LocalDate registrationDate) {
 
         this.customerId = customerId;
         this.nic = nic;
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.registrationDate = registrationDate;
-        this.numberPlate = numberPlate;
+        this.numberPlates = new ArrayList<>();
+    }
+
+    // Restore constructor — used when reloading a customer, along with their
+    // already-known vehicle plates, from saved storage.
+    public Customer(int customerId,
+                     String nic,
+                     String name,
+                     String phoneNumber,
+                     LocalDate registrationDate,
+                     ArrayList<String> numberPlates) {
+
+        this.customerId = customerId;
+        this.nic = nic;
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.registrationDate = registrationDate;
+        this.numberPlates = numberPlates;
     }
 
     // Getters
@@ -48,8 +67,8 @@ public class Customer {
         return registrationDate;
     }
 
-    public String getNumberPlate() {
-        return numberPlate;
+    public ArrayList<String> getNumberPlates() {
+        return numberPlates;
     }
 
     // Setters
@@ -62,8 +81,10 @@ public class Customer {
         this.phoneNumber = phoneNumber;
     }
 
-    public void setNumberPlate(String numberPlate) {
-        this.numberPlate = numberPlate;
+    // Adds a vehicle plate to this customer's list — e.g. called when a
+    // vehicle is registered under their NIC.
+    public void addNumberPlate(String numberPlate) {
+        numberPlates.add(numberPlate);
     }
 
     // Display details
@@ -74,6 +95,6 @@ public class Customer {
         System.out.println("Customer Name: " + name);
         System.out.println("Phone Number: " + phoneNumber);
         System.out.println("Registration Date: " + registrationDate);
-        System.out.println("Vehicle Number Plate: " + numberPlate);
+        System.out.println("Vehicle Number Plates: " + numberPlates);
     }
 }
