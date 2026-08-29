@@ -4,76 +4,76 @@ import java.time.LocalDate;
 
 public class Customer {
 
-    private int CustomerId;
-    private String NIC;
-    private String Name;
-    private String PhoneNumber;
-    private LocalDate RegistrationDate;
-    private String NumberPlate;
+    private int customerId;
+    private String nic;
+    private String name;
+    private String phoneNumber;
+    private LocalDate registrationDate;
+    private String numberPlate;
 
-    public Customer(int CustomerId,
-                    String NIC,
-                    String Name,
-                    String PhoneNumber,
-                    LocalDate RegistrationDate,
-                    String NumberPlate) {
+    public Customer(int customerId,
+                     String nic,
+                     String name,
+                     String phoneNumber,
+                     LocalDate registrationDate,
+                     String numberPlate) {
 
-        this.CustomerId = CustomerId;
-        this.NIC = NIC;
-        this.Name = Name;
-        this.PhoneNumber = PhoneNumber;
-        this.RegistrationDate = RegistrationDate;
-        this.NumberPlate = NumberPlate;
+        this.customerId = customerId;
+        this.nic = nic;
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.registrationDate = registrationDate;
+        this.numberPlate = numberPlate;
     }
 
     // Getters
 
     public int getCustomerId() {
-        return CustomerId;
+        return customerId;
     }
 
     public String getNIC() {
-        return NIC;
+        return nic;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public String getPhoneNumber() {
-        return PhoneNumber;
+        return phoneNumber;
     }
 
     public LocalDate getRegistrationDate() {
-        return RegistrationDate;
+        return registrationDate;
     }
 
     public String getNumberPlate() {
-        return NumberPlate;
+        return numberPlate;
     }
 
     // Setters
 
-    public void setName(String Name) {
-        this.Name = Name;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setPhoneNumber(String PhoneNumber) {
-        this.PhoneNumber = PhoneNumber;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
-    public void setNumberPlate(String NumberPlate) {
-        this.NumberPlate = NumberPlate;
+    public void setNumberPlate(String numberPlate) {
+        this.numberPlate = numberPlate;
     }
 
     // Display details
 
     public void displayDetails() {
-        System.out.println("Customer ID: " + CustomerId);
-        System.out.println("Customer NIC: " + NIC);
-        System.out.println("Customer Name: " + Name);
-        System.out.println("Phone Number: " + PhoneNumber);
-        System.out.println("Registration Date: " + RegistrationDate);
-        System.out.println("Vehicle Number Plate: " + NumberPlate);
+        System.out.println("Customer ID: " + customerId);
+        System.out.println("Customer NIC: " + nic);
+        System.out.println("Customer Name: " + name);
+        System.out.println("Phone Number: " + phoneNumber);
+        System.out.println("Registration Date: " + registrationDate);
+        System.out.println("Vehicle Number Plate: " + numberPlate);
     }
 }

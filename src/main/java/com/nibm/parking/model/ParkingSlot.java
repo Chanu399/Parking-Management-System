@@ -2,31 +2,31 @@ package com.nibm.parking.model;
 
 public class ParkingSlot {
     //Attributes
-    private int SlotNo;
-    private String SlotType;
-    private String Status;
-    private String NumberPlate;
+    private int slotNo;
+    private String slotType;
+    private String status;
+    private String numberPlate;
     private Vehicle assignedVehicle;
 
-    public ParkingSlot(int SlotNo, String SlotType) {
+    public ParkingSlot(int slotNo, String slotType) {
         //Constructor
-        this.SlotNo = SlotNo;
-        this.SlotType = SlotType;
-        this.Status = "Available";
-        this.NumberPlate = null;
+        this.slotNo = slotNo;
+        this.slotType = slotType;
+        this.status = "Available";
+        this.numberPlate = null;
         this.assignedVehicle = null;
     }
 
     public int getSlotNo() {
-        return SlotNo;
+        return slotNo;
     }
 
     public String getStatus() {
-        return Status;
+        return status;
     }
 
     public String getNumberPlate() {
-        return NumberPlate;
+        return numberPlate;
     }
 
     public Vehicle getAssignedVehicle() {
@@ -34,23 +34,28 @@ public class ParkingSlot {
     }
 
     public boolean isAvailable() {
-        return Status.equals("Available");
+        return status.equals("Available");
     }
 
     public boolean canFitVehicle(String vehicleType) {
-        if (SlotType.equals("Motorcycle")) {
+        if (slotType.equals("Motorcycle")) {
             return vehicleType.equals("Motorcycle");
         }
-        if (SlotType.equals("Three wheeler")) {
+        if (slotType.equals("Three wheeler")) {
             return vehicleType.equals("Three wheeler") || vehicleType.equals("ThreeWheeler");
         }
-        if (SlotType.equals("Car/Van")) {
+        if (slotType.equals("Car/Van")) {
             return vehicleType.equals("Car") || vehicleType.equals("Van");
         }
         return false;
     }
 
-    public void assignVehicle(String NumberPlate, String vehicleType) {
+    //Kept for backward compatibility - parks without a known owner NIC
+    public void assignVehicle(String numberPlate, String vehicleType) {
+        assignVehicle(numberPlate, vehicleType, null);
+    }
+
+    public void assignVehicle(String numberPlate, String vehicleType, String nic) {
         if (!isAvailable()) {
             System.out.println("Parking slot is already occupied.");
             return;
@@ -59,25 +64,25 @@ public class ParkingSlot {
             System.out.println("Vehicle cannot use this parking slot.");
             return;
         }
-        this.NumberPlate = NumberPlate;
-        this.Status = "Occupied";
-        this.assignedVehicle = new Vehicle(NumberPlate, vehicleType, 0);
+        this.numberPlate = numberPlate;
+        this.status = "Occupied";
+        this.assignedVehicle = new Vehicle(numberPlate, vehicleType, nic);
     }
 
     public void releaseSlot() {
-        this.Status = "Available";
-        this.NumberPlate = null;
+        this.status = "Available";
+        this.numberPlate = null;
         this.assignedVehicle = null;
     }
 
     //Displaying information
     public void displayDetails() {
-        System.out.println("Slot Number:" + SlotNo);
-        System.out.println("Slot Type:" + SlotType);
-        System.out.println("Status" + Status);
+        System.out.println("Slot Number:" + slotNo);
+        System.out.println("Slot Type:" + slotType);
+        System.out.println("Status:" + status);
 
-        if (NumberPlate != null) {
-            System.out.println("Vehicle Number:" + NumberPlate);
+        if (numberPlate != null) {
+            System.out.println("Vehicle Number:" + numberPlate);
         }
     }
 }

@@ -42,7 +42,12 @@ public class ParkingManager {
         return null;
     }
 
+    //Kept for backward compatibility - parks without a known owner NIC
     public void parkVehicle(String numberPlate, String vehicleType) {
+        parkVehicle(numberPlate, vehicleType, null);
+    }
+
+    public void parkVehicle(String numberPlate, String vehicleType, String nic) {
         for (ParkingRecord record : parkingRecords) {
             if (record.getNumberPlate().equals(numberPlate) && record.getExitTime() == null) {
                 System.out.println("This vehicle is already parked");
@@ -54,7 +59,7 @@ public class ParkingManager {
             System.out.println("No parking slot is available.");
             return;
         }
-        slot.assignVehicle(numberPlate, vehicleType);
+        slot.assignVehicle(numberPlate, vehicleType, nic);
         ParkingRecord record = new ParkingRecord(parkingRecords.size() + 1, numberPlate, slot);
         parkingRecords.add(record);
 
@@ -83,6 +88,10 @@ public class ParkingManager {
         if (parkingSlots.isEmpty()) {
             System.out.println("No parking slots are available");
             return;
+        }
+        for (ParkingSlot slot : parkingSlots) {
+            slot.displayDetails();
+            System.out.println("--------------------");
         }
     }
 

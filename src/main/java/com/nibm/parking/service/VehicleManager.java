@@ -15,6 +15,10 @@ public class VehicleManager {
 
     //Read
     public void viewVehicles() {
+        if (vehicles.isEmpty()) {
+            System.out.println("No vehicles found.");
+            return;
+        }
         for (Vehicle vehicle : vehicles) {
             vehicle.displayDetails();
             System.out.println("--------------------");
@@ -35,7 +39,11 @@ public class VehicleManager {
 
     //Delete
     public void deleteVehicle(String numberPlate) {
-        vehicles.removeIf(vehicle -> vehicle.getNumberPlate().equals(numberPlate));
-        System.out.println("Vehicle deleted successfully");
+        boolean removed = vehicles.removeIf(vehicle -> vehicle.getNumberPlate().equals(numberPlate));
+        if (removed) {
+            System.out.println("Vehicle deleted successfully");
+        } else {
+            System.out.println("Vehicle not found");
+        }
     }
 }

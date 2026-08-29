@@ -5,85 +5,85 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class ParkingRecord {
-    private int RecordId;
-    private String NumberPlate;
-    private ParkingSlot parkingslot;
-    private LocalDateTime EntryTime;
-    private LocalDateTime ExitTime;
-    private double ParkingFee;
+    private int recordId;
+    private String numberPlate;
+    private ParkingSlot parkingSlot;
+    private LocalDateTime entryTime;
+    private LocalDateTime exitTime;
+    private double parkingFee;
 
     //Constructor to create a parking record
-    public ParkingRecord(int RecordId, String NumberPlate, ParkingSlot parkingslot) {
-        this.RecordId = RecordId;
-        this.NumberPlate = NumberPlate;
-        this.parkingslot = parkingslot;
-        this.EntryTime = LocalDateTime.now();
-        this.ExitTime = null;
+    public ParkingRecord(int recordId, String numberPlate, ParkingSlot parkingSlot) {
+        this.recordId = recordId;
+        this.numberPlate = numberPlate;
+        this.parkingSlot = parkingSlot;
+        this.entryTime = LocalDateTime.now();
+        this.exitTime = null;
         //Initial Parking fee
-        this.ParkingFee = 0.0;
+        this.parkingFee = 0.0;
     }
 
     public int getRecordId() {
-        return RecordId;
+        return recordId;
     }
 
     public String getNumberPlate() {
-        return NumberPlate;
+        return numberPlate;
     }
 
     public ParkingSlot getParkingSlot() {
-        return parkingslot;
+        return parkingSlot;
     }
 
     public LocalDateTime getEntryTime() {
-        return EntryTime;
+        return entryTime;
     }
 
     public LocalDateTime getExitTime() {
-        return ExitTime;
+        return exitTime;
     }
 
     public double getParkingFee() {
-        return ParkingFee;
+        return parkingFee;
     }
 
     public String getEntryTimeFormatted() {
-        return EntryTime == null ? "N/A" : EntryTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
+        return entryTime == null ? "N/A" : entryTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
     }
 
     public String getExitTimeFormatted() {
-        return ExitTime == null ? "N/A" : ExitTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
+        return exitTime == null ? "N/A" : exitTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
     }
 
     public void recordExit() {
-        ExitTime = LocalDateTime.now();
+        exitTime = LocalDateTime.now();
         calculateFee();
     }
 
     public long calculateDuration() {
-        if (ExitTime == null) {
+        if (exitTime == null) {
             return 0;
         }
-        return Duration.between(EntryTime, ExitTime).toMinutes();
+        return Duration.between(entryTime, exitTime).toMinutes();
     }
 
     //Calculating the parking fee
     public double calculateFee() {
         long minutes = calculateDuration();
-        double hourlyrate = 100.0;
+        double hourlyRate = 100.0;
         double hours = Math.ceil(minutes / 60.0);
 
-        ParkingFee = hours * hourlyrate;
-        return ParkingFee;
+        parkingFee = hours * hourlyRate;
+        return parkingFee;
     }
 
     //Displaying the parking record
     public void displayRecord() {
-        System.out.println("Record ID:" + RecordId);
-        System.out.println("Number Plate:" + NumberPlate);
-        System.out.println("Slot Number:" + parkingslot.getSlotNo());
-        System.out.println("Entry Time : " + EntryTime);
-        System.out.println("Exit Time : " + ExitTime);
-        System.out.println("Parking Fee: Rs. " + ParkingFee);
+        System.out.println("Record ID:" + recordId);
+        System.out.println("Number Plate:" + numberPlate);
+        System.out.println("Slot Number:" + parkingSlot.getSlotNo());
+        System.out.println("Entry Time : " + entryTime);
+        System.out.println("Exit Time : " + exitTime);
+        System.out.println("Parking Fee: Rs. " + parkingFee);
     }
 }

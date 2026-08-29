@@ -20,14 +20,8 @@ public class CustomerManager {
             System.out.println("No customers found.");
             return;
         }
-
         for (Customer customer : customers) {
-            System.out.println("Customer ID: " + customer.getCustomerId());
-            System.out.println("Customer NIC: " + customer.getNIC());
-            System.out.println("Customer Name: " + customer.getName());
-            System.out.println("Phone Number: " + customer.getPhoneNumber());
-            System.out.println("Registration Date: " + customer.getRegistrationDate());
-            System.out.println("Vehicle Number Plate: " + customer.getNumberPlate());
+            customer.displayDetails();
             System.out.println("--------------------");
         }
     }
@@ -60,5 +54,15 @@ public class CustomerManager {
         } else {
             System.out.println("Customer not found");
         }
+    }
+
+    // Links a number plate (e.g. one being parked) back to a registered customer
+    public Customer findCustomerByNumberPlate(String numberPlate) {
+        for (Customer customer : customers) {
+            if (customer.getNumberPlate().equals(numberPlate)) {
+                return customer;
+            }
+        }
+        return null;
     }
 }

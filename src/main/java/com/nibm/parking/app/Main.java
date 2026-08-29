@@ -6,9 +6,11 @@ import java.util.Scanner;
 import com.nibm.parking.exception.PaymentFailedException;
 import com.nibm.parking.model.Customer;
 import com.nibm.parking.model.ParkingRecord;
+import com.nibm.parking.model.Vehicle;
 import com.nibm.parking.service.CustomerManager;
 import com.nibm.parking.service.ParkingManager;
 import com.nibm.parking.service.PaymentManager;
+import com.nibm.parking.service.VehicleManager;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,6 +18,7 @@ public class Main {
         ParkingManager parkingManager = new ParkingManager();
         CustomerManager customerManager = new CustomerManager();
         PaymentManager paymentManager = new PaymentManager();
+        VehicleManager vehicleManager = new VehicleManager();
 
         parkingManager.createParkingSlots();
 
@@ -33,6 +36,10 @@ public class Main {
             System.out.println("9. Make Payment");
             System.out.println("10. View Payments");
             System.out.println("11. View Total Collected");
+            System.out.println("12. Register Vehicle");
+            System.out.println("13. View Registered Vehicles");
+            System.out.println("14. Update Vehicle Number Plate");
+            System.out.println("15. Delete Vehicle");
             System.out.println("0. Exit");
             System.out.print("Enter your choice: ");
 
@@ -44,7 +51,11 @@ public class Main {
                     String plate = sc.nextLine();
                     System.out.print("Enter Vehicle Type (Motorcycle/Three wheeler/Car/Van): ");
                     String type = sc.nextLine();
-                    parkingManager.parkVehicle(plate, type);
+                    // Look up whether this plate belongs to a registered customer,
+                    // so the parked vehicle can be linked to their NIC.
+                    Customer matchedCustomer = customerManager.findCustomerByNumberPlate(plate);
+                    String nicForParking = (matchedCustomer == null) ? null : matchedCustomer.getNIC();
+                    parkingManager.parkVehicle(plate, type, nicForParking);
                     break;
 
                 case 2:
@@ -121,6 +132,34 @@ public class Main {
 
                 case 11:
                     System.out.println("Total Collected: Rs. " + paymentManager.getTotalCollected());
+                    break;
+
+                case 12:
+                    System.out.print("Enter Number Plate: ");
+                    String vehPlate = sc.nextLine();
+                    System.out.print("Enter Vehicle Type (Motorcycle/ThreeWheeler/Car/Van): ");
+                    String vehType = sc.nextLine();
+                    System.out.print("Enter Owner NIC: ");
+                    String vehNic = sc.nextLine();
+                    vehicleManager.addVehicle(new Vehicle(vehPlate, vehType, vehNic));
+                    break;
+
+                case 13:
+                    vehicleManager.viewVehicles();
+                    break;
+
+                case 14:
+                    System.out.print("Enter current Number Plate: ");
+                    String currentPlate = sc.nextLine();
+                    System.out.print("Enter new Number Plate: ");
+                    String newVehPlate = sc.nextLine();
+                    vehicleManager.updateVehicle(currentPlate, newVehPlate);
+                    break;
+
+                case 15:
+                    System.out.print("Enter Number Plate to delete: ");
+                    String deletePlate = sc.nextLine();
+                    vehicleManager.deleteVehicle(deletePlate);
                     break;
 
                 case 0:

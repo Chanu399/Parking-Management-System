@@ -1,94 +1,93 @@
 package com.nibm.parking.model;
 
 public class Payment {
-    private int PaymentId;
-    private ParkingRecord ParkingRecordRef;
-    private double Amount;
-    private String PaymentDate;
-    private String PaymentStatus;
-    private String PaymentMethod;
+    private int paymentId;
+    private ParkingRecord parkingRecordRef;
+    private double amount;
+    private String paymentDate;
+    private String paymentStatus;
+    private String paymentMethod;
 
     //constructor
-    public Payment(int PaymentId, ParkingRecord ParkingRecordRef, String PaymentMethod) {
-        this.PaymentId = PaymentId;
-        this.ParkingRecordRef = ParkingRecordRef;
-        this.Amount = ParkingRecordRef.getParkingFee();
-        this.PaymentMethod = PaymentMethod;
-        this.PaymentStatus = "Pending";
+    public Payment(int paymentId, ParkingRecord parkingRecordRef, String paymentMethod) {
+        this.paymentId = paymentId;
+        this.parkingRecordRef = parkingRecordRef;
+        this.amount = parkingRecordRef.getParkingFee();
+        this.paymentMethod = paymentMethod;
+        this.paymentStatus = "Pending";
     }
 
     //getters
     public int getPaymentId() {
-        return PaymentId;
+        return paymentId;
     }
 
     public ParkingRecord getParkingRecordRef() {
-        return ParkingRecordRef;
+        return parkingRecordRef;
     }
 
     public double getAmount() {
-        return Amount;
+        return amount;
     }
 
     public String getPaymentDate() {
-        return PaymentDate;
+        return paymentDate;
     }
 
     public String getPaymentStatus() {
-        return PaymentStatus;
+        return paymentStatus;
     }
 
     public String getPaymentMethod() {
-        return PaymentMethod;
+        return paymentMethod;
     }
 
     //setters
-    public void setPaymentStatus(String PaymentStatus) {
-        this.PaymentStatus = PaymentStatus;
+    public void setPaymentStatus(String paymentStatus) {
+        this.paymentStatus = paymentStatus;
     }
 
-    public void setPaymentMethod(String PaymentMethod) {
-        this.PaymentMethod = PaymentMethod;
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
     }
 
     //process payment
     public void processPayment() {
-        if (this.Amount > 0) {
-            this.PaymentStatus = "Paid";
-            this.PaymentDate = java.time.LocalDateTime.now().toString();
+        if (this.amount > 0) {
+            this.paymentStatus = "Paid";
+            this.paymentDate = java.time.LocalDateTime.now().toString();
             System.out.println("Payment successful.");
         } else {
-            this.PaymentStatus = "Failed";
-            this.PaymentDate = java.time.LocalDateTime.now().toString();
+            this.paymentStatus = "Failed";
+            this.paymentDate = java.time.LocalDateTime.now().toString();
             System.out.println("Payment failed.");
         }
     }
 
     //display details
     public void displayDetails() {
-        System.out.println("Payment ID:" + this.PaymentId);
-        System.out.println("Amount:Rs. " + this.Amount);
-        System.out.println("Payment Method:" + this.PaymentMethod);
-        System.out.println("Payment Status:" + this.PaymentStatus);
-        System.out.println("Payment Date:" + this.PaymentDate);
+        System.out.println("Payment ID:" + this.paymentId);
+        System.out.println("Amount:Rs. " + this.amount);
+        System.out.println("Payment Method:" + this.paymentMethod);
+        System.out.println("Payment Status:" + this.paymentStatus);
+        System.out.println("Payment Date:" + this.paymentDate);
     }
 
     //generate receipt
     public String generateReceipt() {
         String receipt = "";
         receipt += "===== PARKING RECEIPT =====\n";
-        receipt += "Record ID:" + this.ParkingRecordRef.getRecordId() + "\n";
-        receipt += "Vehicle No:" + this.ParkingRecordRef.getParkingSlot().getAssignedVehicle().getNumberPlate() + "\n";
-        receipt += "Entry Time:" + this.ParkingRecordRef.getEntryTimeFormatted() + "\n";
-        receipt += "Exit Time:" + this.ParkingRecordRef.getExitTimeFormatted() + "\n";
-        receipt += "Fee:Rs. " + this.Amount + "\n";
+        receipt += "Record ID:" + this.parkingRecordRef.getRecordId() + "\n";
+        receipt += "Vehicle No:" + this.parkingRecordRef.getParkingSlot().getAssignedVehicle().getNumberPlate() + "\n";
+        receipt += "Entry Time:" + this.parkingRecordRef.getEntryTimeFormatted() + "\n";
+        receipt += "Exit Time:" + this.parkingRecordRef.getExitTimeFormatted() + "\n";
+        receipt += "Fee:Rs. " + this.amount + "\n";
         receipt += "----------------------------\n";
-        receipt += "Payment ID:" + this.PaymentId + "\n";
-        receipt += "Method:" + this.PaymentMethod + "\n";
-        receipt += "Status:" + this.PaymentStatus + "\n";
-        receipt += "Date:" + this.PaymentDate + "\n";
+        receipt += "Payment ID:" + this.paymentId + "\n";
+        receipt += "Method:" + this.paymentMethod + "\n";
+        receipt += "Status:" + this.paymentStatus + "\n";
+        receipt += "Date:" + this.paymentDate + "\n";
         receipt += "============================\n";
         return receipt;
     }
 }
-
