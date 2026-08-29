@@ -9,6 +9,11 @@
       "numberPlate": "3434",
       "vehicleType": "Van",
       "nic": "3333"
+    },
+    {
+      "numberPlate": "3443",
+      "vehicleType": "Car",
+      "nic": "1111"
     }
   ],
   "customers": [
@@ -19,8 +24,17 @@
       "phoneNumber": "1111",
       "registrationDate": "2026-08-29",
       "numberPlates": [
-        "1212"
+        "1212",
+        "3443"
       ]
+    },
+    {
+      "customerId": 20,
+      "nic": "8888",
+      "name": "Induwara",
+      "phoneNumber": "123456",
+      "registrationDate": "2026-08-29",
+      "numberPlates": []
     }
   ],
   "parkingSlots": [
