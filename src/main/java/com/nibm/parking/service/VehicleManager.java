@@ -14,18 +14,18 @@ public class VehicleManager {
     }
 
     //Read
-    public void viewVehicle() {
+    public void viewVehicles() {
         for (Vehicle vehicle : vehicles) {
             vehicle.displayDetails();
             System.out.println("--------------------");
         }
     }
 
-    //update
-    public void updateVehicle(String NumberPlate, String NewNumberPlate) {
+    //Update
+    public void updateVehicle(String numberPlate, String newNumberPlate) {
         for (Vehicle vehicle : vehicles) {
-            if (vehicle.getNumberPlate().equals(NumberPlate)) {
-                vehicle.setNumberPlate(NewNumberPlate);
+            if (vehicle.getNumberPlate().equals(numberPlate)) {
+                vehicle.setNumberPlate(newNumberPlate);
                 System.out.println("Vehicle updated successfully");
                 return;
             }
@@ -33,9 +33,9 @@ public class VehicleManager {
         System.out.println("Vehicle not found");
     }
 
-    //delete
-    public void deleteVehicle(String NumberPlate) {
-        vehicles.removeIf(vehicle -> vehicle.getNumberPlate().equals(NumberPlate));
+    //Delete
+    public void deleteVehicle(String numberPlate) {
+        vehicles.removeIf(vehicle -> vehicle.getNumberPlate().equals(numberPlate));
         System.out.println("Vehicle deleted successfully");
     }
 }

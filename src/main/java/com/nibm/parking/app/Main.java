@@ -77,7 +77,7 @@ public class Main {
                     break;
 
                 case 6:
-                    customerManager.viewCustomer();
+                    customerManager.viewCustomers();
                     break;
 
                 case 7:

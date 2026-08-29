@@ -15,7 +15,7 @@ public class CustomerManager {
     }
 
     // Read
-    public void viewCustomer() {
+    public void viewCustomers() {
         if (customers.isEmpty()) {
             System.out.println("No customers found.");
             return;
@@ -33,10 +33,10 @@ public class CustomerManager {
     }
 
     // Update
-    public void updateCustomer(int CustomerId, String newName,
-                               String newPhoneNumber, String newNumberPlate) {
+    public void updateCustomer(int customerId, String newName,
+                                String newPhoneNumber, String newNumberPlate) {
         for (Customer customer : customers) {
-            if (customer.getCustomerId() == CustomerId) {
+            if (customer.getCustomerId() == customerId) {
                 customer.setName(newName);
                 customer.setPhoneNumber(newPhoneNumber);
                 customer.setNumberPlate(newNumberPlate);
@@ -50,9 +50,9 @@ public class CustomerManager {
     }
 
     // Delete
-    public void deleteCustomer(int CustomerId) {
+    public void deleteCustomer(int customerId) {
         boolean removed = customers.removeIf(
-            customer -> customer.getCustomerId() == CustomerId
+            customer -> customer.getCustomerId() == customerId
         );
 
         if (removed) {

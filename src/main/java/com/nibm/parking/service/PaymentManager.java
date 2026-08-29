@@ -7,53 +7,53 @@ import com.nibm.parking.model.ParkingRecord;
 import com.nibm.parking.model.Payment;
 
 public class PaymentManager {
-    private ArrayList<Payment> Payments = new ArrayList<>();
-    private int PaymentSequence = 0;
+    private ArrayList<Payment> payments = new ArrayList<>();
+    private int paymentSequence = 0;
 
     //Create
-    public Payment makePayment(ParkingRecord ParkingRecordRef, String PaymentMethod) throws PaymentFailedException {
-        if (ParkingRecordRef.getParkingFee() <= 0) {
-            throw new PaymentFailedException("Invalid amount for record " + ParkingRecordRef.getRecordId());
+    public Payment makePayment(ParkingRecord parkingRecordRef, String paymentMethod) throws PaymentFailedException {
+        if (parkingRecordRef.getParkingFee() <= 0) {
+            throw new PaymentFailedException("Invalid amount for record " + parkingRecordRef.getRecordId());
         }
-        PaymentSequence++;
-        Payment payment = new Payment(PaymentSequence, ParkingRecordRef, PaymentMethod);
+        paymentSequence++;
+        Payment payment = new Payment(paymentSequence, parkingRecordRef, paymentMethod);
         payment.processPayment();
-        Payments.add(payment);
+        payments.add(payment);
         System.out.println("Payment added successfully");
         return payment;
     }
 
     //Read
     public void viewPayments() {
-        for (Payment payment : Payments) {
+        for (Payment payment : payments) {
             payment.displayDetails();
             System.out.println("--------------------");
         }
     }
 
-    //update
-    public void updatePaymentStatus(int PaymentId, String NewStatus) {
-        for (Payment payment : Payments) {
-            if (payment.getPaymentId() == PaymentId) {
-                payment.setPaymentStatus(NewStatus);
+    //Update
+    public void updatePaymentStatus(int paymentId, String newStatus) {
+        for (Payment payment : payments) {
+            if (payment.getPaymentId() == paymentId) {
+                payment.setPaymentStatus(newStatus);
                 return;
             }
         }
     }
 
-    //delete
-    public void deletePayment(int PaymentId) {
-        Payments.removeIf(payment -> payment.getPaymentId() == PaymentId);
+    //Delete
+    public void deletePayment(int paymentId) {
+        payments.removeIf(payment -> payment.getPaymentId() == paymentId);
     }
 
-    //get total collected
+    //Get total collected
     public double getTotalCollected() {
-        double Total = 0;
-        for (Payment payment : Payments) {
+        double total = 0;
+        for (Payment payment : payments) {
             if (payment.getPaymentStatus().equals("Paid")) {
-                Total += payment.getAmount();
+                total += payment.getAmount();
             }
         }
-        return Total;
+        return total;
     }
 }
