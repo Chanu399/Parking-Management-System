@@ -8,7 +8,7 @@ import com.nibm.parking.exception.PaymentFailedException;
 import com.nibm.parking.model.Customer;
 import com.nibm.parking.model.ParkingRecord;
 import com.nibm.parking.model.Vehicle;
-import com.nibm.parking.persistence.DataStore;
+import com.nibm.parking.persistance.DataStore;
 import com.nibm.parking.service.CustomerManager;
 import com.nibm.parking.service.ParkingManager;
 import com.nibm.parking.service.PaymentManager;
@@ -63,11 +63,23 @@ public class Main {
                     String plate = sc.nextLine();
                     System.out.print("Enter Vehicle Type (Motorcycle/Three wheeler/Car/Van): ");
                     String type = sc.nextLine();
-                    // Look up whether this plate belongs to a registered customer,
-                    // so the parked vehicle can be linked to their NIC.
-                    Customer matchedCustomer = customerManager.findCustomerByNumberPlate(plate);
-                    String nicForParking = (matchedCustomer == null) ? null : matchedCustomer.getNIC();
-                    parkingManager.parkVehicle(plate, type, nicForParking);
+                    System.out.print("Enter NIC: ");
+                    String parkNic = sc.nextLine();
+                    // The number plate must be a registered vehicle, or it's
+                    // refused entry entirely.
+                    Vehicle matchedVehicle = vehicleManager.findVehicleByNumberPlate(plate);
+                    if (matchedVehicle == null) {
+                        System.out.println("Vehicle not registered. Vehicle cannot be parked.");
+                        break;
+                    }
+                    // The NIC must also belong to a registered customer, or the
+                    // vehicle is refused entry entirely.
+                    Customer matchedCustomer = customerManager.findCustomerByNIC(parkNic);
+                    if (matchedCustomer == null) {
+                        System.out.println("NIC not registered. Vehicle cannot be parked.");
+                        break;
+                    }
+                    parkingManager.parkVehicle(plate, type, matchedCustomer.getNIC());
                     break;
 
                 case 2:

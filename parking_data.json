@@ -1,6 +1,15 @@
 {
   "vehicles": [],
-  "customers": [],
+  "customers": [
+    {
+      "customerId": 1111,
+      "nic": "1111",
+      "name": "joe",
+      "phoneNumber": "1111",
+      "registrationDate": "2026-08-29",
+      "numberPlate": "1111"
+    }
+  ],
   "parkingSlots": [
     {
       "slotNo": 1,
@@ -245,17 +254,17 @@
     {
       "slotNo": 31,
       "slotType": "Car/Van",
-      "status": "Available",
-      "numberPlate": null,
-      "vehicleType": null,
-      "nic": null
+      "status": "Occupied",
+      "numberPlate": "1111",
+      "vehicleType": "Van",
+      "nic": "1111"
     },
     {
       "slotNo": 32,
       "slotType": "Car/Van",
-      "status": "Available",
-      "numberPlate": null,
-      "vehicleType": null,
+      "status": "Occupied",
+      "numberPlate": "2222",
+      "vehicleType": "Car",
       "nic": null
     },
     {
@@ -523,6 +532,23 @@
       "nic": null
     }
   ],
-  "parkingRecords": [],
+  "parkingRecords": [
+    {
+      "recordId": 1,
+      "numberPlate": "1111",
+      "slotNo": 31,
+      "entryTime": "2026-08-29T18:24:46.875564800",
+      "exitTime": null,
+      "parkingFee": 0.0
+    },
+    {
+      "recordId": 2,
+      "numberPlate": "2222",
+      "slotNo": 32,
+      "entryTime": "2026-08-29T18:25:23.408642500",
+      "exitTime": null,
+      "parkingFee": 0.0
+    }
+  ],
   "payments": []
 }

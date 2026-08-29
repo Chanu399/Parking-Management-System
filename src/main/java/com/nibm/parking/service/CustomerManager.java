@@ -66,6 +66,18 @@ public class CustomerManager {
         return null;
     }
 
+    // Links a NIC entered at parking time back to a registered customer.
+    // Returns null if no matching customer exists — caller should just
+    // park without a customer link in that case.
+    public Customer findCustomerByNIC(String nic) {
+        for (Customer customer : customers) {
+            if (customer.getNIC().equals(nic)) {
+                return customer;
+            }
+        }
+        return null;
+    }
+
     //For saving to storage
     public ArrayList<Customer> getAllCustomers() {
         return customers;

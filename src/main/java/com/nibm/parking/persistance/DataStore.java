@@ -1,4 +1,4 @@
-package com.nibm.parking.persistence;
+package com.nibm.parking.persistance;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
