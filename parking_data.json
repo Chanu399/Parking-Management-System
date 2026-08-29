@@ -567,6 +567,14 @@
       "entryTime": "2026-08-29T19:13:00.348625400",
       "exitTime": "2026-08-29T19:22:28.973535500",
       "parkingFee": 100.0
+    },
+    {
+      "recordId": 2,
+      "numberPlate": "1212",
+      "slotNo": 31,
+      "entryTime": "2026-08-29T20:05:36.007631700",
+      "exitTime": "2026-08-29T20:15:27.785989200",
+      "parkingFee": 100.0
     }
   ],
   "payments": [
@@ -575,6 +583,14 @@
       "recordId": 1,
       "amount": 100.0,
       "paymentDate": "2026-08-29T19:22:51.776793100",
+      "paymentStatus": "Paid",
+      "paymentMethod": "Cash"
+    },
+    {
+      "paymentId": 2,
+      "recordId": 2,
+      "amount": 100.0,
+      "paymentDate": "2026-08-29T20:16:11.028043100",
       "paymentStatus": "Paid",
       "paymentMethod": "Cash"
     }
