@@ -17,6 +17,17 @@ public class Payment {
         this.paymentStatus = "Pending";
     }
 
+    //Used only when restoring a payment from saved data - keeps its original status/date
+    public Payment(int paymentId, ParkingRecord parkingRecordRef, String paymentMethod,
+                    double amount, String paymentStatus, String paymentDate) {
+        this.paymentId = paymentId;
+        this.parkingRecordRef = parkingRecordRef;
+        this.paymentMethod = paymentMethod;
+        this.amount = amount;
+        this.paymentStatus = paymentStatus;
+        this.paymentDate = paymentDate;
+    }
+
     //getters
     public int getPaymentId() {
         return paymentId;

@@ -23,6 +23,17 @@ public class ParkingRecord {
         this.parkingFee = 0.0;
     }
 
+    //Used only when restoring a record from saved data - keeps its original timestamps/fee
+    public ParkingRecord(int recordId, String numberPlate, ParkingSlot parkingSlot,
+                          LocalDateTime entryTime, LocalDateTime exitTime, double parkingFee) {
+        this.recordId = recordId;
+        this.numberPlate = numberPlate;
+        this.parkingSlot = parkingSlot;
+        this.entryTime = entryTime;
+        this.exitTime = exitTime;
+        this.parkingFee = parkingFee;
+    }
+
     public int getRecordId() {
         return recordId;
     }

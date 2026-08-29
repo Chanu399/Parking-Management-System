@@ -62,4 +62,21 @@ public class PaymentManager {
         }
         return total;
     }
+
+    //For saving to storage
+    public ArrayList<Payment> getAllPayments() {
+        return payments;
+    }
+
+    //For restoring from storage - also re-syncs the ID counter so new payments don't collide
+    public void loadPayments(ArrayList<Payment> loadedPayments) {
+        this.payments = loadedPayments;
+        int maxId = 0;
+        for (Payment payment : loadedPayments) {
+            if (payment.getPaymentId() > maxId) {
+                maxId = payment.getPaymentId();
+            }
+        }
+        this.paymentSequence = maxId;
+    }
 }

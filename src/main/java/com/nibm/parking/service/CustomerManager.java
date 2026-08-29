@@ -65,4 +65,14 @@ public class CustomerManager {
         }
         return null;
     }
+
+    //For saving to storage
+    public ArrayList<Customer> getAllCustomers() {
+        return customers;
+    }
+
+    //For restoring from storage
+    public void loadCustomers(ArrayList<Customer> loadedCustomers) {
+        this.customers = loadedCustomers;
+    }
 }

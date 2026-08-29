@@ -1,0 +1,537 @@
+{
+  "vehicles": [],
+  "customers": [
+    {
+      "customerId": 121,
+      "nic": "121212",
+      "name": "joje",
+      "phoneNumber": "123456",
+      "registrationDate": "2026-08-29",
+      "numberPlate": "1232"
+    }
+  ],
+  "parkingSlots": [
+    {
+      "slotNo": 1,
+      "slotType": "Motorcycle",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 2,
+      "slotType": "Motorcycle",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 3,
+      "slotType": "Motorcycle",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 4,
+      "slotType": "Motorcycle",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 5,
+      "slotType": "Motorcycle",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 6,
+      "slotType": "Motorcycle",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 7,
+      "slotType": "Motorcycle",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 8,
+      "slotType": "Motorcycle",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 9,
+      "slotType": "Motorcycle",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 10,
+      "slotType": "Motorcycle",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 11,
+      "slotType": "Motorcycle",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 12,
+      "slotType": "Motorcycle",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 13,
+      "slotType": "Motorcycle",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 14,
+      "slotType": "Motorcycle",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 15,
+      "slotType": "Motorcycle",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 16,
+      "slotType": "Three wheeler",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 17,
+      "slotType": "Three wheeler",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 18,
+      "slotType": "Three wheeler",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 19,
+      "slotType": "Three wheeler",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 20,
+      "slotType": "Three wheeler",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 21,
+      "slotType": "Three wheeler",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 22,
+      "slotType": "Three wheeler",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 23,
+      "slotType": "Three wheeler",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 24,
+      "slotType": "Three wheeler",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 25,
+      "slotType": "Three wheeler",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 26,
+      "slotType": "Three wheeler",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 27,
+      "slotType": "Three wheeler",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 28,
+      "slotType": "Three wheeler",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 29,
+      "slotType": "Three wheeler",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 30,
+      "slotType": "Three wheeler",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 31,
+      "slotType": "Car/Van",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 32,
+      "slotType": "Car/Van",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 33,
+      "slotType": "Car/Van",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 34,
+      "slotType": "Car/Van",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 35,
+      "slotType": "Car/Van",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 36,
+      "slotType": "Car/Van",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 37,
+      "slotType": "Car/Van",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 38,
+      "slotType": "Car/Van",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 39,
+      "slotType": "Car/Van",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 40,
+      "slotType": "Car/Van",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 41,
+      "slotType": "Car/Van",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 42,
+      "slotType": "Car/Van",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 43,
+      "slotType": "Car/Van",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 44,
+      "slotType": "Car/Van",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 45,
+      "slotType": "Car/Van",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 46,
+      "slotType": "Car/Van",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 47,
+      "slotType": "Car/Van",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 48,
+      "slotType": "Car/Van",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 49,
+      "slotType": "Car/Van",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 50,
+      "slotType": "Car/Van",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 51,
+      "slotType": "Car/Van",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 52,
+      "slotType": "Car/Van",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 53,
+      "slotType": "Car/Van",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 54,
+      "slotType": "Car/Van",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 55,
+      "slotType": "Car/Van",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 56,
+      "slotType": "Car/Van",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 57,
+      "slotType": "Car/Van",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 58,
+      "slotType": "Car/Van",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 59,
+      "slotType": "Car/Van",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 60,
+      "slotType": "Car/Van",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 61,
+      "slotType": "Car/Van",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 62,
+      "slotType": "Car/Van",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 63,
+      "slotType": "Car/Van",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 64,
+      "slotType": "Car/Van",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    },
+    {
+      "slotNo": 65,
+      "slotType": "Car/Van",
+      "status": "Available",
+      "numberPlate": null,
+      "vehicleType": null,
+      "nic": null
+    }
+  ],
+  "parkingRecords": [],
+  "payments": []
+}

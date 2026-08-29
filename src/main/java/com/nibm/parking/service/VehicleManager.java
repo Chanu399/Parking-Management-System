@@ -46,4 +46,14 @@ public class VehicleManager {
             System.out.println("Vehicle not found");
         }
     }
+
+    //For saving to storage
+    public ArrayList<Vehicle> getAllVehicles() {
+        return vehicles;
+    }
+
+    //For restoring from storage
+    public void loadVehicles(ArrayList<Vehicle> loadedVehicles) {
+        this.vehicles = loadedVehicles;
+    }
 }

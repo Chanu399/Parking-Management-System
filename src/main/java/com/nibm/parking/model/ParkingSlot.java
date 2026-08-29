@@ -33,6 +33,10 @@ public class ParkingSlot {
         return assignedVehicle;
     }
 
+    public String getSlotType() {
+        return slotType;
+    }
+
     public boolean isAvailable() {
         return status.equals("Available");
     }
@@ -48,6 +52,20 @@ public class ParkingSlot {
             return vehicleType.equals("Car") || vehicleType.equals("Van");
         }
         return false;
+    }
+
+    //Used only when restoring a slot from saved data - rebuilds status/occupant as-is
+    public ParkingSlot(int slotNo, String slotType, String status, String numberPlate,
+                        String vehicleType, String nic) {
+        this.slotNo = slotNo;
+        this.slotType = slotType;
+        this.status = status;
+        this.numberPlate = numberPlate;
+        if ("Occupied".equals(status) && numberPlate != null) {
+            this.assignedVehicle = new Vehicle(numberPlate, vehicleType, nic);
+        } else {
+            this.assignedVehicle = null;
+        }
     }
 
     //Kept for backward compatibility - parks without a known owner NIC

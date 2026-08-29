@@ -1,5 +1,6 @@
 package com.nibm.parking.app;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Scanner;
 
@@ -7,6 +8,7 @@ import com.nibm.parking.exception.PaymentFailedException;
 import com.nibm.parking.model.Customer;
 import com.nibm.parking.model.ParkingRecord;
 import com.nibm.parking.model.Vehicle;
+import com.nibm.parking.persistence.DataStore;
 import com.nibm.parking.service.CustomerManager;
 import com.nibm.parking.service.ParkingManager;
 import com.nibm.parking.service.PaymentManager;
@@ -20,7 +22,17 @@ public class Main {
         PaymentManager paymentManager = new PaymentManager();
         VehicleManager vehicleManager = new VehicleManager();
 
-        parkingManager.createParkingSlots();
+        boolean loadedFromFile = false;
+        try {
+            loadedFromFile = DataStore.loadAll(vehicleManager, customerManager, parkingManager, paymentManager);
+        } catch (IOException e) {
+            System.out.println("Could not read saved data (" + e.getMessage() + "). Starting fresh.");
+        }
+        if (loadedFromFile) {
+            System.out.println("Loaded saved data from parking_data.json");
+        } else {
+            parkingManager.createParkingSlots();
+        }
 
         int choice;
         do {
@@ -168,6 +180,12 @@ public class Main {
 
                 default:
                     System.out.println("Invalid choice. Try again.");
+            }
+
+            try {
+                DataStore.saveAll(vehicleManager, customerManager, parkingManager, paymentManager);
+            } catch (IOException e) {
+                System.out.println("Warning: could not save data (" + e.getMessage() + ")");
             }
         } while (choice != 0);
 
