@@ -1,15 +1,6 @@
 {
   "vehicles": [],
-  "customers": [
-    {
-      "customerId": 121,
-      "nic": "121212",
-      "name": "joje",
-      "phoneNumber": "123456",
-      "registrationDate": "2026-08-29",
-      "numberPlate": "1232"
-    }
-  ],
+  "customers": [],
   "parkingSlots": [
     {
       "slotNo": 1,
