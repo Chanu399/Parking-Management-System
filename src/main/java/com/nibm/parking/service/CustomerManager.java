@@ -1,4 +1,8 @@
+package com.nibm.parking.service;
+
 import java.util.ArrayList;
+
+import com.nibm.parking.model.Customer;
 
 public class CustomerManager {
 

@@ -75,14 +75,14 @@ public void removeVehicle(String numberPlate)
             System.out.println("Parking Fee:Rs. " + record.getParkingFee());
             return;
         }
-}
-System.out.println("Vehicle is not currently parked");
+    }
+    System.out.println("Vehicle is not currently parked");
 }
 public void viewParkingSlots(){
     if (ParkingSlots.isEmpty()){
         System.out.println("No parking slots are available");
-    return;
-}
+        return;
+    }
 }
 public void viewParkingRecords(){
   for (ParkingRecord record : ParkingRecords){
@@ -93,10 +93,9 @@ public ParkingRecord findParkingRecord(int recordId){
     for (ParkingRecord record : ParkingRecords){
         if (record.getRecordId() == recordId){
             return record;
-       
-           }
+        }
     }
+    return null;
 }
-  return null;
-  }
+}
 

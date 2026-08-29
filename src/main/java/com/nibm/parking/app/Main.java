@@ -1,5 +1,14 @@
+package com.nibm.parking.app;
+
 import java.time.LocalDate;
 import java.util.Scanner;
+
+import com.nibm.parking.exception.PaymentFailedException;
+import com.nibm.parking.model.Customer;
+import com.nibm.parking.model.ParkingRecord;
+import com.nibm.parking.service.CustomerManager;
+import com.nibm.parking.service.ParkingManager;
+import com.nibm.parking.service.PaymentManager;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,3 +1,5 @@
+package com.nibm.parking.model;
+
 import java.time.LocalDate;
 
 public class Customer {
