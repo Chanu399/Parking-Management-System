@@ -54,7 +54,7 @@ public class ParkingSlot {
         return false;
     }
 
-    //Used only when restoring a slot from saved data - rebuilds status/occupant as-is
+    //Use when restoring a slot from stored data 
     public ParkingSlot(int slotNo, String slotType, String status, String numberPlate,
                         String vehicleType, String nic) {
         this.slotNo = slotNo;
@@ -68,7 +68,7 @@ public class ParkingSlot {
         }
     }
 
-    //Kept for backward compatibility - parks without a known owner NIC
+    //parks without a known owner NIC
     public void assignVehicle(String numberPlate, String vehicleType) {
         assignVehicle(numberPlate, vehicleType, null);
     }

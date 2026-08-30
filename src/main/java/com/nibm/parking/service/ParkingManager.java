@@ -42,7 +42,7 @@ public class ParkingManager {
         return null;
     }
 
-    //Kept for backward compatibility - parks without a known owner NIC
+    //parks without a known owner NIC
     public void parkVehicle(String numberPlate, String vehicleType) {
         parkVehicle(numberPlate, vehicleType, null);
     }
@@ -110,17 +110,17 @@ public class ParkingManager {
         return null;
     }
 
-    //For saving to storage
+    //saving to storage
     public ArrayList<ParkingSlot> getAllParkingSlots() {
         return parkingSlots;
     }
 
-    //For saving to storage
+    //saving to storage
     public ArrayList<ParkingRecord> getAllParkingRecords() {
         return parkingRecords;
     }
 
-    //For restoring from storage
+    //restoring from storage
     public void loadData(ArrayList<ParkingSlot> loadedSlots, ArrayList<ParkingRecord> loadedRecords) {
         this.parkingSlots = loadedSlots;
         this.parkingRecords = loadedRecords;

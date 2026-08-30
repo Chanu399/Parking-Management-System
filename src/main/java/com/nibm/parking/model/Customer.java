@@ -12,8 +12,8 @@ public class Customer {
     private LocalDate registrationDate;
     private ArrayList<String> numberPlates;
 
-    // Normal constructor — used when creating a brand-new customer with no
-    // vehicles registered under them yet.
+    //constructor 
+    
     public Customer(int customerId,
                      String nic,
                      String name,
@@ -28,8 +28,8 @@ public class Customer {
         this.numberPlates = new ArrayList<>();
     }
 
-    // Restore constructor — used when reloading a customer, along with their
-    // already-known vehicle plates, from saved storage.
+    //constructor 
+    
     public Customer(int customerId,
                      String nic,
                      String name,
@@ -81,8 +81,8 @@ public class Customer {
         this.phoneNumber = phoneNumber;
     }
 
-    // Adds a vehicle plate to this customer's list — e.g. called when a
-    // vehicle is registered under their NIC.
+    
+    
     public void addNumberPlate(String numberPlate) {
         numberPlates.add(numberPlate);
     }

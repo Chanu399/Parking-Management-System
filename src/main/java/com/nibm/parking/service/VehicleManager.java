@@ -47,8 +47,8 @@ public class VehicleManager {
         }
     }
 
-    // Looks up whether a number plate is registered, e.g. before allowing
-    // that vehicle to be parked. Returns null if not found.
+    
+    
     public Vehicle findVehicleByNumberPlate(String numberPlate) {
         for (Vehicle vehicle : vehicles) {
             if (vehicle.getNumberPlate().equals(numberPlate)) {
@@ -58,12 +58,12 @@ public class VehicleManager {
         return null;
     }
 
-    //For saving to storage
+    //saving
     public ArrayList<Vehicle> getAllVehicles() {
         return vehicles;
     }
 
-    //For restoring from storage
+    //restoring 
     public void loadVehicles(ArrayList<Vehicle> loadedVehicles) {
         this.vehicles = loadedVehicles;
     }

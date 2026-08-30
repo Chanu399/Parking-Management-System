@@ -68,7 +68,7 @@ public class PaymentManager {
         return payments;
     }
 
-    //For restoring from storage - also re-syncs the ID counter so new payments don't collide
+    //For restoring from storage 
     public void loadPayments(ArrayList<Payment> loadedPayments) {
         this.payments = loadedPayments;
         int maxId = 0;

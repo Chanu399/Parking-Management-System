@@ -14,6 +14,11 @@
       "numberPlate": "3443",
       "vehicleType": "Car",
       "nic": "1111"
+    },
+    {
+      "numberPlate": "bhh5625",
+      "vehicleType": "Motorcycle",
+      "nic": "200634606025"
     }
   ],
   "customers": [
@@ -34,6 +39,24 @@
       "name": "Induwara",
       "phoneNumber": "123456",
       "registrationDate": "2026-08-29",
+      "numberPlates": []
+    },
+    {
+      "customerId": 2006,
+      "nic": "200634606025",
+      "name": "E.I.S.Lankeshwara",
+      "phoneNumber": "0752703709",
+      "registrationDate": "2026-08-30",
+      "numberPlates": [
+        "bhh5625"
+      ]
+    },
+    {
+      "customerId": 2006,
+      "nic": "200634606025",
+      "name": "E.I.S.Lankeshwara",
+      "phoneNumber": "0752703709",
+      "registrationDate": "2026-08-30",
       "numberPlates": []
     }
   ],
@@ -575,6 +598,14 @@
       "entryTime": "2026-08-29T20:05:36.007631700",
       "exitTime": "2026-08-29T20:15:27.785989200",
       "parkingFee": 100.0
+    },
+    {
+      "recordId": 3,
+      "numberPlate": "bhh5625",
+      "slotNo": 1,
+      "entryTime": "2026-08-30T12:03:27.334219700",
+      "exitTime": "2026-08-30T12:06:45.368591900",
+      "parkingFee": 100.0
     }
   ],
   "payments": [
@@ -591,6 +622,14 @@
       "recordId": 2,
       "amount": 100.0,
       "paymentDate": "2026-08-29T20:16:11.028043100",
+      "paymentStatus": "Paid",
+      "paymentMethod": "Cash"
+    },
+    {
+      "paymentId": 3,
+      "recordId": 3,
+      "amount": 100.0,
+      "paymentDate": "2026-08-30T12:06:52.098692500",
       "paymentStatus": "Paid",
       "paymentMethod": "Cash"
     }

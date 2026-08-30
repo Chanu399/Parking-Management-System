@@ -54,8 +54,8 @@ public class CustomerManager {
         }
     }
 
-    // Links a NIC entered at parking/vehicle-registration time back to a
-    // registered customer. Returns null if no matching customer exists.
+    // Links a NIC entered at parking/vehicle-registration 
+    
     public Customer findCustomerByNIC(String nic) {
         for (Customer customer : customers) {
             if (customer.getNIC().equals(nic)) {
@@ -65,12 +65,12 @@ public class CustomerManager {
         return null;
     }
 
-    //For saving to storage
+    // saving to storage
     public ArrayList<Customer> getAllCustomers() {
         return customers;
     }
 
-    //For restoring from storage
+    //restoring from storage
     public void loadCustomers(ArrayList<Customer> loadedCustomers) {
         this.customers = loadedCustomers;
     }
