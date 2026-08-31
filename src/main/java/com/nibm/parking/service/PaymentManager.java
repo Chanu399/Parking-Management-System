@@ -11,7 +11,7 @@ public class PaymentManager {
     private int paymentSequence = 0;
 
     // 2 validation checks
-    // valid amount
+    // vehicle status
     public Payment makePayment(ParkingRecord parkingRecordRef, String paymentMethod) throws PaymentFailedException {
         if (parkingRecordRef.getParkingFee() <= 0) {
             throw new PaymentFailedException("Invalid amount for record " + parkingRecordRef.getRecordId());
