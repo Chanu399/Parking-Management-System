@@ -16,7 +16,7 @@ public class PaymentManager {
         if (parkingRecordRef.getParkingFee() <= 0) {
             throw new PaymentFailedException("Invalid amount for record " + parkingRecordRef.getRecordId());
         }
-        //alredy paied
+        //duplicate payment
         for (Payment existing : payments) {
             if (existing.getParkingRecordRef().getRecordId() == parkingRecordRef.getRecordId()
                     && existing.getPaymentStatus().equals("Paid")) {
