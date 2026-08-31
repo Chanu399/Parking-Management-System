@@ -10,17 +10,21 @@ public class PaymentManager {
     private ArrayList<Payment> payments = new ArrayList<>();
     private int paymentSequence = 0;
 
-    //Create
+    // 2 validation checks
+    // valid amount
     public Payment makePayment(ParkingRecord parkingRecordRef, String paymentMethod) throws PaymentFailedException {
         if (parkingRecordRef.getParkingFee() <= 0) {
             throw new PaymentFailedException("Invalid amount for record " + parkingRecordRef.getRecordId());
         }
+        //alredy paied
         for (Payment existing : payments) {
             if (existing.getParkingRecordRef().getRecordId() == parkingRecordRef.getRecordId()
                     && existing.getPaymentStatus().equals("Paid")) {
+                //fail calling
                 throw new PaymentFailedException("Record " + parkingRecordRef.getRecordId() + " has already been paid");
             }
         }
+        // success payment
         paymentSequence++;
         Payment payment = new Payment(paymentSequence, parkingRecordRef, paymentMethod);
         payment.processPayment();
@@ -29,7 +33,7 @@ public class PaymentManager {
         return payment;
     }
 
-    //Read
+    //loop payment and call display details
     public void viewPayments() {
         for (Payment payment : payments) {
             payment.displayDetails();

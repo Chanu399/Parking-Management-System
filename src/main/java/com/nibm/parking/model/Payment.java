@@ -9,6 +9,7 @@ public class Payment {
     private String paymentMethod;
 
     //constructor
+    //new paymen
     public Payment(int paymentId, ParkingRecord parkingRecordRef, String paymentMethod) {
         this.paymentId = paymentId;
         this.parkingRecordRef = parkingRecordRef;
