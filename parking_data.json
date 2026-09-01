@@ -16,9 +16,14 @@
       "nic": "1111"
     },
     {
-      "numberPlate": "bhh5625",
+      "numberPlate": "ABC4510",
+      "vehicleType": "Car",
+      "nic": "2007512562"
+    },
+    {
+      "numberPlate": "DG8004",
       "vehicleType": "Motorcycle",
-      "nic": "200634606025"
+      "nic": "2007512562"
     }
   ],
   "customers": [
@@ -42,32 +47,25 @@
       "numberPlates": []
     },
     {
-      "customerId": 2006,
-      "nic": "200634606025",
-      "name": "E.I.S.Lankeshwara",
-      "phoneNumber": "0752703709",
-      "registrationDate": "2026-08-30",
+      "customerId": 4,
+      "nic": "2007512562",
+      "name": "Hasith Perera",
+      "phoneNumber": "02558785",
+      "registrationDate": "2026-08-31",
       "numberPlates": [
-        "bhh5625"
+        "ABC4510",
+        "DG8004"
       ]
-    },
-    {
-      "customerId": 2006,
-      "nic": "200634606025",
-      "name": "E.I.S.Lankeshwara",
-      "phoneNumber": "0752703709",
-      "registrationDate": "2026-08-30",
-      "numberPlates": []
     }
   ],
   "parkingSlots": [
     {
       "slotNo": 1,
       "slotType": "Motorcycle",
-      "status": "Available",
-      "numberPlate": null,
-      "vehicleType": null,
-      "nic": null
+      "status": "Occupied",
+      "numberPlate": "DG8004",
+      "vehicleType": "Motorcycle",
+      "nic": "2007512562"
     },
     {
       "slotNo": 2,
@@ -601,11 +599,19 @@
     },
     {
       "recordId": 3,
-      "numberPlate": "bhh5625",
-      "slotNo": 1,
-      "entryTime": "2026-08-30T12:03:27.334219700",
-      "exitTime": "2026-08-30T12:06:45.368591900",
+      "numberPlate": "ABC4510",
+      "slotNo": 31,
+      "entryTime": "2026-08-31T20:44:15.122046",
+      "exitTime": "2026-08-31T21:04:20.416898900",
       "parkingFee": 100.0
+    },
+    {
+      "recordId": 4,
+      "numberPlate": "DG8004",
+      "slotNo": 1,
+      "entryTime": "2026-09-01T07:47:29.489516500",
+      "exitTime": null,
+      "parkingFee": 0.0
     }
   ],
   "payments": [
@@ -629,7 +635,7 @@
       "paymentId": 3,
       "recordId": 3,
       "amount": 100.0,
-      "paymentDate": "2026-08-30T12:06:52.098692500",
+      "paymentDate": "2026-08-31T21:04:34.775839900",
       "paymentStatus": "Paid",
       "paymentMethod": "Cash"
     }
